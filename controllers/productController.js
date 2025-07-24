@@ -12,7 +12,7 @@ exports.createProduct = async (req, res) => {
     if (exists) {
          return res.status(400).json({ message: 'You already added a product with this SKU' });
     }
-    console.log(req.user._id)
+    // console.log(req.user._id)
     const newProduct = new Product({
       user: req.user._id,  // Comes from JWT middleware
       name, type, sku, image_url, description, quantity, price
@@ -45,4 +45,32 @@ exports.updateProductQuantity = async (req, res) => {
     res.status(500).json({ message: 'Update failed', error: err.message });
   }
 };
+
+
+exports.getAllProducts = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+    // Fetch only products of the logged-in user
+    const products = await Product.find({ user: req.user._id })
+                                  .skip(skip)
+                                  .limit(limit);
+
+    const total = await Product.countDocuments({ user: req.user._id });
+
+    res.status(200).json({
+      page,
+      limit,
+      total,
+      products
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error', error: error.message });
+  }
+};
+
+
+
 
