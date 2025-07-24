@@ -29,15 +29,24 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 ## 📂 Project Structure
 
 ├── controllers/
+
 ├── middleware/
+
 ├── models/
+
 ├── routes/
+
 ├── config/
+
 ├── docs/│
 │ └── postman/
 │ ├── user_auth_collection.json
 │ └── product_crud_collection.json
+
 ├── app.js
+
 ├── .env
+
 ├── README.md
+
 └── package.json
