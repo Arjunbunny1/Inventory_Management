@@ -59,7 +59,39 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Arjunbunny1/Inventory_Management.git
+cd inventory-management-api
+```
 
-
-###  2.Install Dependencies
+### 2. Install Dependencies
+```bash
 npm install
+```
+
+### 3. Create .env File
+PORT=8000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+
+### 4.Start the Server
+npm start
+
+---
+##  API Documentation
+Swagger (OpenAPI)
+Once the server is running, visit
+```bash
+http://localhost:8000/api-docs
+```
+
+## Postman Collections
+Test your APIs using Postman:
+
+User Auth Collection
+Product CRUD Collection
+
+To use:
+Open Postman
+Import the .json files
+Add the JWT token in headers 
+
