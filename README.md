@@ -1,10 +1,10 @@
-# 📦 Inventory Management System API
+#  Inventory Management System API
 
 A simple and secure Inventory Management System backend built using **Node.js**, **Express**, and **MongoDB**. It includes user authentication with JWT, product CRUD functionality, pagination, and detailed API documentation using **Swagger** and **Postman**.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - User Registration & Login with JWT Authentication
 - User-specific inventory access (multi-user support)
@@ -16,7 +16,7 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (Mongoose ODM)
@@ -26,7 +26,7 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ├── controllers/
 
@@ -50,3 +50,16 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 ├── README.md
 
 └── package.json
+
+
+---
+
+##  Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Arjunbunny1/Inventory_Management.git
+
+
+###  2.Install Dependencies
+npm install
