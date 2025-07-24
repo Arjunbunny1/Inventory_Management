@@ -69,14 +69,17 @@ npm install
 
 ### 3. Create .env File
 PORT=8000
+
 MONGO_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret_key
 
 
 ### 4.Start the Server
+```bash
 npm start
+```
 
----
 ##  API Documentation
 Swagger (OpenAPI)
 Once the server is running, visit
