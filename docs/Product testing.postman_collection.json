@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "5f6b4321-f8c9-4e77-a408-63efe8af2625",
+		"name": "Product testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45711671",
+		"_collection_link": "https://arjun-4414622.postman.co/workspace/Inventory-Managenent~55bfa4eb-9df7-4cb7-b6e7-d35527d6bcc2/collection/45711671-5f6b4321-f8c9-4e77-a408-63efe8af2625?action=share&source=collection_link&creator=45711671"
+	},
+	"item": [
+		{
+			"name": "create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFlNmJmZmUyOTcyMjBhYTliMjY5NiIsImlhdCI6MTc1MzM0Mzk2NCwiZXhwIjoxNzUzNDMwMzY0fQ.JgPK6H8QeFuSkGfHtaShpCJss4MbFyEiTgLfliZZpfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Asus tuf 15\",\r\n  \"type\": \"Laptop\",\r\n  \"sku\": \"Asus9\",\r\n  \"image_url\": \"https://example.com/image2.jpg\",\r\n  \"description\": \"Premium laptop\",\r\n  \"quantity\": 1,\r\n  \"price\": 60000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFlNmJmZmUyOTcyMjBhYTliMjY5NiIsImlhdCI6MTc1MzM0Mzk2NCwiZXhwIjoxNzUzNDMwMzY0fQ.JgPK6H8QeFuSkGfHtaShpCJss4MbFyEiTgLfliZZpfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "quantity",
+							"value": "23",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/6881f388ad3b70a81b3099d4/quantity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"6881f388ad3b70a81b3099d4",
+						"quantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show all Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFlNmJmZmUyOTcyMjBhYTliMjY5NiIsImlhdCI6MTc1MzM0Mzk2NCwiZXhwIjoxNzUzNDMwMzY0fQ.JgPK6H8QeFuSkGfHtaShpCJss4MbFyEiTgLfliZZpfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Tata Altroz\",\r\n  \"type\": \"Car\",\r\n  \"sku\": \"ALTROZ001\",\r\n  \"image_url\": \"https://example.com/image.jpg\",\r\n  \"description\": \"Premium hatchback by Tata\",\r\n  \"quantity\": 5,\r\n  \"price\": 899999\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

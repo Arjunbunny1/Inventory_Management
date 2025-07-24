@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "965630c3-8118-4645-85b0-0a9a38fdb448",
+		"name": "User_testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45711671",
+		"_collection_link": "https://arjun-4414622.postman.co/workspace/Inventory-Managenent~55bfa4eb-9df7-4cb7-b6e7-d35527d6bcc2/collection/45711671-965630c3-8118-4645-85b0-0a9a38fdb448?action=share&source=collection_link&creator=45711671"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "arjun",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "arjun@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "arjun",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODFlNmJmZmUyOTcyMjBhYTliMjY5NiIsImlhdCI6MTc1MzM0Mzk2NCwiZXhwIjoxNzUzNDMwMzY0fQ.JgPK6H8QeFuSkGfHtaShpCJss4MbFyEiTgLfliZZpfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "arjun",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
