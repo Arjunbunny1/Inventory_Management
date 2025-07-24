@@ -23,6 +23,7 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 - **Authentication**: JWT (JSON Web Tokens)
 - **API Docs**: Swagger
 - **Testing**: Postman
+- **frontend**: React, React Router DOM, Axios (for API calls),CSS / Inline styles
 
 ---
 
@@ -35,6 +36,8 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 ├── models/
 
 ├── routes/
+
+├── /inventory-frontend
 
 ├── config/
 
@@ -59,10 +62,10 @@ A simple and secure Inventory Management System backend built using **Node.js**,
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Arjunbunny1/Inventory_Management.git
-cd inventory-management-api
+cd Inventory_management
 ```
 
-### 2. Install Dependencies
+### 2. Install Dependencies(for server)
 ```bash
 npm install
 ```
@@ -79,6 +82,28 @@ JWT_SECRET=your_jwt_secret_key
 ```bash
 npm start
 ```
+### 5.Frontend
+#### Prerequisites
+---
+- Node.js and npm installed
+
+- Backend server running on `http://localhost:8000`
+---
+
+```bash
+cd Inventory_management/inventory-frontend/client
+```
+---
+#### Installing Dependcies
+```bash
+npm install
+```
+
+#### start Frontend server
+```bash
+npm start
+```
+
 
 ##  API Documentation
 Swagger (OpenAPI)
