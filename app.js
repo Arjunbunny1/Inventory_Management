@@ -3,10 +3,14 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
+const { swaggerUi, swaggerSpec } = require("./swagger");
+
 dotenv.config();
 const app = express();
 connectDB();
 
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(express.urlencoded({extended:true}))
 app.use(cors());
