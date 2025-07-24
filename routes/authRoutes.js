@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { loginUser,registerUser } = require('../controllers/authController');
+const { protect } = require('../middleware/authMiddleware');
 
 
 /**
@@ -66,5 +67,17 @@ router.post('/register', registerUser);
  *         description: Invalid credentials
  */
 router.post('/login', loginUser);
+
+router.get('/me', protect, async (req, res) => {
+  res.status(200).json({
+    user: {
+      name: req.user.name,
+      email: req.user.email,
+      username: req.user.username,
+      id: req.user._id,
+    },
+  });
+});
+
 
 module.exports = router;
