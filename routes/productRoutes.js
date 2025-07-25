@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createProduct,updateProductQuantity,getAllProducts } = require('../controllers/productController');
+const { createProduct, updateProductQuantity, getAllProducts, getProductById } = require('../controllers/productController');
 const { protect } = require('../middleware/authMiddleware');
 
 
@@ -77,6 +77,30 @@ router.get('/', protect, getAllProducts);
  */
 router.post('/', protect, createProduct);  
 
+
+/**
+ * @swagger
+ * /products/{id}:
+ *   get:
+ *     summary: Get a single product by ID
+ *     tags:
+ *       - Products
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Product ID
+ *     responses:
+ *       200:
+ *         description: Product details
+ *       404:
+ *         description: Product not found
+ */
+router.get('/:id', protect, getProductById);
 
 
 /**

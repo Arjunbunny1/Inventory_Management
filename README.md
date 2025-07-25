@@ -123,3 +123,7 @@ Open Postman
 Import the .json files
 Add the JWT token in headers 
 
+## AI Assistance Disclosure
+Frontend: AI was used to help create React components. It supported in building pages like Login, Register, Dashboard, and Add Product.
+Backend: The backend was primarily written by me based on my own logic and implementation approach. AI was used occasionally—for resolving errors and understanding best practices.
+
