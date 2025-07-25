@@ -18,24 +18,24 @@ A modern, full-stack Inventory Management System with a beautiful React frontend
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🏠 Landing Page
+### Landing Page
 ![Landing Page](public/images/Screenshot%202025-07-25%20172856.png)
 *Modern hero section with gradient background and feature highlights*
 
-### 🔐 User Authentication
+### User Authentication
 ![Login Page](public/images/Screenshot%202025-07-25%20172909.png)
 *Professional login interface with glass-morphism effects*
 
 ![Register Page](public/images/Screenshot%202025-07-25%20172923.png)
 *User registration with real-time validation*
 
-### 📊 Dashboard
+### Dashboard
 ![Dashboard](public/images/Screenshot%202025-07-25%20172952.png)
 *Comprehensive inventory overview with statistics and product management*
 
-### ➕ Product Management
+### Product Management
 ![Add Product](public/images/Screenshot%202025-07-25%20173007.png)
 *Modern form for adding new products to inventory*
 
@@ -44,7 +44,7 @@ A modern, full-stack Inventory Management System with a beautiful React frontend
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 19.1.0** - Modern UI library
@@ -68,7 +68,7 @@ A modern, full-stack Inventory Management System with a beautiful React frontend
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Inventory_Management/
@@ -94,7 +94,7 @@ Inventory_Management/
 │       ├── Product testing.postman_collection.json
 │       └── User_testing.postman_collection.json
 │
-├── 📄 Configuration
+├── Configuration
 │   ├── .env                 # Environment variables
 │   ├── package.json         # Backend dependencies
 │   └── README.md           # Project documentation
@@ -103,22 +103,22 @@ Inventory_Management/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js** (v14 or higher)
 - **MongoDB** (local installation or MongoDB Atlas)
 - **npm** 
 
-### 🛠️ Installation & Setup
+### Installation & Setup
 
-#### 1️⃣ Clone the Repository
+#### 1️. Clone the Repository
 ```bash
 git clone https://github.com/Arjunbunny1/Inventory_Management.git
 cd Inventory_Management
 ```
 
-#### 2️⃣ Backend Setup
+#### 2️. Backend Setup
 ```bash
 # Install backend dependencies
 npm install
@@ -129,7 +129,7 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_super_secret_jwt_key
 ```
 
-#### 3️⃣ Frontend Setup
+#### 3️. Frontend Setup
 ```bash
 # Navigate to frontend directory
 cd inventory-frontend/client
@@ -138,7 +138,7 @@ cd inventory-frontend/client
 npm install
 ```
 
-#### 4️⃣ Run the Application
+#### 4️. Run the Application
 ```bash
 # Terminal 1: Start Backend Server (from root directory)
 npm start
@@ -147,14 +147,14 @@ npm start
 npm start
 ```
 
-#### 5️⃣ Access the Application
+#### 5️. Access the Application
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/api-docs
 
 ---
 
-##  📚 API Documentation
+##  API Documentation
 
 ### Swagger (OpenAPI)
 Interactive API documentation is available once the server is running:
@@ -162,7 +162,7 @@ Interactive API documentation is available once the server is running:
 http://localhost:8000/api-docs
 ```
 
-### 🧪 Postman Collections
+### Postman Collections
 Test the APIs using the provided Postman collections:
 
 - **User Authentication Collection** - Registration, login, and user management
@@ -176,7 +176,7 @@ Test the APIs using the provided Postman collections:
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
 The application uses **JWT (JSON Web Tokens)** for secure authentication:
 
