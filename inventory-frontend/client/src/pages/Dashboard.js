@@ -71,6 +71,50 @@ function Dashboard() {
     navigate('/login');
   };
 
+  const handleDeleteProduct = async (productId, productName) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${productName}"?\n\nThis action cannot be undone.`
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await axios.delete(`http://localhost:8000/api/products/${productId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // Remove the deleted product from the local state
+      setProducts(prevProducts => prevProducts.filter(product => product._id !== productId));
+      
+      // Recalculate stats after deletion
+      const updatedProducts = products.filter(product => product._id !== productId);
+      const totalProducts = updatedProducts.length;
+      const totalValue = updatedProducts.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+      const lowStock = updatedProducts.filter(product => product.quantity <= 5 && product.quantity > 0).length;
+      const outOfStock = updatedProducts.filter(product => product.quantity === 0).length;
+      
+      setStats({
+        totalProducts,
+        totalValue,
+        lowStock,
+        outOfStock
+      });
+
+      alert(`"${productName}" has been deleted successfully!`);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      if (error.response?.status === 401) {
+        handleLogout();
+      } else if (error.response?.status === 404) {
+        alert('Product not found or you do not have permission to delete it.');
+      } else {
+        alert('Failed to delete product. Please try again.');
+      }
+    }
+  };
+
   const getStockStatus = (quantity) => {
     if (quantity === 0) return 'out-of-stock';
     if (quantity <= 5) return 'low-stock';
@@ -233,6 +277,12 @@ function Dashboard() {
                     onClick={() => navigate(`/update-product/${product._id}`)}
                   >
                     <span>✏️</span> Update
+                  </button>
+                  <button 
+                    className="delete-btn"
+                    onClick={() => handleDeleteProduct(product._id, product.name)}
+                  >
+                    <span>🗑️</span> Delete
                   </button>
                 </div>
               </div>

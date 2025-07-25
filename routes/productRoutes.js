@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createProduct, updateProductQuantity, getAllProducts, getProductById } = require('../controllers/productController');
+const { createProduct, updateProductQuantity, getAllProducts, getProductById,deleteProduct } = require('../controllers/productController');
 const { protect } = require('../middleware/authMiddleware');
 
 
@@ -137,5 +137,29 @@ router.get('/:id', protect, getProductById);
  *         description: Product not found
  */
 router.put('/:id/quantity', protect, updateProductQuantity);
+
+/**
+ * @swagger
+ * /products/{id}:
+ *   delete:
+ *     summary: Delete a product
+ *     tags:
+ *       - Products
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Product ID
+ *     responses:
+ *       200:
+ *         description: Product deleted successfully
+ *       404:
+ *         description: Product not found or unauthorized
+ */
+router.delete('/:id', protect, deleteProduct);
 
 module.exports = router;
