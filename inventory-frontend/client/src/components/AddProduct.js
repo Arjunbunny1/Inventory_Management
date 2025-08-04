@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './AddProduct.css';
 
 function AddProduct() {
@@ -92,7 +93,7 @@ function AddProduct() {
         price: Number(formData.price)
       };
       
-      const res = await axios.post('http://localhost:8000/api/products', submitData, {
+      const res = await axios.post(API_ENDPOINTS.PRODUCTS, submitData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './Login.css';
 
 function Login() {
@@ -52,7 +53,7 @@ function Login() {
     
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:8000/api/auth/login', credentials);
+      const res = await axios.post(API_ENDPOINTS.LOGIN, credentials);
       const token = res.data.token;
       localStorage.setItem('token', token);
       alert('Login successful!');

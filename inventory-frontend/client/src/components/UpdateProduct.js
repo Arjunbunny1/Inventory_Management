@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './UpdateProduct.css';
 
 function UpdateProduct() {
@@ -20,7 +21,7 @@ function UpdateProduct() {
       try {
         setIsLoading(true);
         setError('');
-        const res = await axios.get(`http://localhost:8000/api/products/${id}`, {
+        const res = await axios.get(API_ENDPOINTS.PRODUCT_BY_ID(id), {
           headers: { Authorization: `Bearer ${token}` }
         });
         
@@ -102,7 +103,7 @@ function UpdateProduct() {
     setIsSubmitting(true);
     try {
       await axios.put(
-        `http://localhost:8000/api/products/${id}/quantity`,
+        API_ENDPOINTS.UPDATE_PRODUCT_QUANTITY(id),
         { quantity: Number(quantity) },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './Register.css';
 
 function Register() {
@@ -67,7 +68,7 @@ function Register() {
     
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:8000/api/auth/register', formData);
+      const res = await axios.post(API_ENDPOINTS.REGISTER, formData);
       alert('User registered successfully!');
       console.log(res.data);
       navigate('/login');

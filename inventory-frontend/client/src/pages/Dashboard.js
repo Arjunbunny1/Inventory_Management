@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -20,7 +21,7 @@ function Dashboard() {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/auth/me', {
+      const res = await axios.get(API_ENDPOINTS.ME, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +38,7 @@ function Dashboard() {
   const fetchProducts = async () => {
     try {
       setIsLoading(true);
-      const res = await axios.get(`http://localhost:8000/api/products?page=${page}&limit=10`, {
+      const res = await axios.get(`${API_ENDPOINTS.PRODUCTS}?page=${page}&limit=10`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -79,7 +80,7 @@ function Dashboard() {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/products/${productId}`, {
+      await axios.delete(API_ENDPOINTS.PRODUCT_BY_ID(productId), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
