@@ -3,7 +3,9 @@ const router = express.Router();
 const { loginUser,registerUser } = require('../controllers/authController');
 const { protect } = require('../middleware/authMiddleware');
 
-
+router.get('/', (req, res) => {
+  res.send('hello from server');
+});
 /**
  * @swagger
  * /auth/register:
