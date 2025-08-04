@@ -138,7 +138,11 @@ cd inventory-frontend/client
 
 # Install frontend dependencies
 npm install
+
+# Create .env file in frontend root directory
+REACT_APP_API_URL=http://localhost:8000
 ```
+
 
 #### 4️. Run the Application
 ```bash
