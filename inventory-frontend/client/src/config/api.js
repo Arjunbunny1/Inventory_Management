@@ -1,5 +1,6 @@
 // API Configuration
-const API_BASE_URL = 'https://inventory-management-backend-gmji.onrender.com' || 'http://localhost:8000';
+const API_BASE_URL = 'https://inventory-management-backend-gmji.onrender.com';
+// const API_BASE_URL = 'http://localhost:8000';
 
 export const API_ENDPOINTS = {
   // Auth endpoints
