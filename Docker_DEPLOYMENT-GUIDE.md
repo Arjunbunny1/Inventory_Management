@@ -1,7 +1,7 @@
 # Inventory Management System - Deployment Guide for Docker
 
 
-📌 **Please ensure your password is at least 8 characters long.**
+📌 **Please ensure your password is at least 8 characters long for Registrtaion.**
 
 
 ## **Quick Start (For Others)**
