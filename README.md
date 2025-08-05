@@ -2,6 +2,7 @@
 
 A modern, full-stack Inventory Management System with a beautiful React frontend and secure Node.js backend. Features user authentication with JWT, complete CRUD operations, real-time statistics, and a responsive UI with glass-morphism design effects.
 
+📌 **Please ensure your password is at least 8 characters long for Registration .**
 
 **🌐 Live Demo:** https://inventory-management-frontend-b2t8.onrender.com
 ---
